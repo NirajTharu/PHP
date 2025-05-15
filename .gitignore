@@ -1,0 +1,48 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon files
+Icon
+
+# Thumbnails
+._*
+
+# Spotlight
+.Spotlight-V100
+
+# Trash
+.Trashes
+
+# macOS metadata
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# PHP specific
+/vendor/            # Composer dependencies
+composer.lock
+composer.phar
+
+# PHPUnit
+phpunit.xml
+phpunit.xml.dist
+
+# Logs and cache
+*.log
+*.cache
+.cache/
+logs/
+tmp/
+temp/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment files
+.env
+.env.*
