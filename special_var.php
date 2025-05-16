@@ -49,7 +49,7 @@ echo "{$_POST["Password"]} <br>";
 
 <body>
     <!-- for the method it should be changed to the post while using the "$_POST" -->
-    <form action="specialvar.php" method="post">
+    <form action="special_var.php" method="post">
         <label for="">Username</label><br>
         <input type="text" name="Username"><br>
 
