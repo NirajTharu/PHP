@@ -20,4 +20,6 @@ switch ($date) {
     case "Saturday":
         echo "Today is holyday.";
         break;
+    default:
+        echo "No matching case.";
 }
