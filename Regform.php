@@ -11,13 +11,13 @@ include("Db.php");
     <title>Reg Form</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
         <h2>Welcome to Registration Page:</h2>
         username:<br>
-        <input type="text", name="username"><br>
+        <input type="text" name="username"><br>
         password:<br>
-        <input type="password", name="password"><br>
-        <input type="Submit", name="Submit",value="register">
+        <input type="password" name="password"><br>
+        <input type="Submit" name="Submit" value="register">
     </form>
 </body>
 </html>
@@ -27,26 +27,29 @@ include("Db.php");
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = filter_input(INPUT_POST,"username",FILTER_SANITIZE_SPECIAL_CHARS);
     $password = filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
-}
+    
 
-if(empty($username)){
-    echo "please inter the username.<br>";
-}
-elseif($password){
-    echo "Enter the password.";
-}
+        if(empty($username))
+        {
+            echo "please enter a username.";
+        }
+            elseif(empty($password))
+            {
+            echo "Enter the password.";
+            }
 
 else{
     $hash = password_hash($password,PASSWORD_DEFAULT);
-    $sql = "INSERT INTO user(user, password),VALUES ('$username','$hash')";
+    $sql = "INSERT INTO User_Details(user, passwords) VALUES ('$username','$hash')";
 
-    try{mysqli_query($conn,$sql);
-        echo "You are registered now. ";
-    }
-    catch(mysqli_sql_exception){
-        echo "Username is already taken!";
-    }
+            try{mysqli_query($conn, $sql);
+                echo "You are registered now.";
+                }
+            catch(mysqli_sql_exception){
+                echo "Username is already taken!";
+                }
   
+    }
 }
 mysqli_close($conn);
 ?>
