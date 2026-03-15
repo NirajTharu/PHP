@@ -15,7 +15,7 @@ setcookie("fav_dessert", "ice cream", time() + (86400 * 2), "/");
 // }
 
 if (isset($_COOKIE["fav_food"])) {
-    echo "Buy some{$_COOKIE["fav_food"]}!!!";
+    echo "Buy some {$_COOKIE["fav_food"]}!!!";
 } else {
     echo "I don't know your favorite food.";
 }
