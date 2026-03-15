@@ -40,15 +40,15 @@ if (isset($_POST["login"])) {
 
   if(empty($age))
     {
-        echo "Invalid Age.";
+        echo "Invalid Age. <br>";
     }
     else{
-        echo "You are $age years old.";
+        echo "You are $age years old. <br>";
     }
 
     if (empty($email)) 
         {
-        echo "invalid email";
+        echo "invalid email <br>";
     } else {
         echo "Your email is {$email}";
     }
