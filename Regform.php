@@ -1,6 +1,5 @@
 <?php
-include("Db.php ");
-
+include("Db.php");
 ?>
 
 
@@ -13,7 +12,7 @@ include("Db.php ");
 </head>
 <body>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <h2>Welcome to Website:</h2>
+        <h2>Welcome to Registration Page:</h2>
         username:<br>
         <input type="text", name="username"><br>
         password:<br>
@@ -25,9 +24,9 @@ include("Db.php ");
 
 <?php
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $username=filter_input(INPUT_POST,"username",FILTER_SANITIZE_SPECIAL_CHARS);
-    $password=filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = filter_input(INPUT_POST,"username",FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
 }
 
 if(empty($username)){
@@ -38,14 +37,14 @@ elseif($password){
 }
 
 else{
-    $hash=password_hash($password,PASSWORD_DEFAULT);
-    $sql="INSERT INTO user(user, password),VALUES ('$username','$hash')";
+    $hash = password_hash($password,PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user(user, password),VALUES ('$username','$hash')";
 
     try{mysqli_query($conn,$sql);
         echo "You are registered now. ";
     }
     catch(mysqli_sql_exception){
-        echo"Username is already taken!";
+        echo "Username is already taken!";
     }
   
 }
