@@ -38,9 +38,16 @@ if (isset($_POST["login"])) {
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL,);
     $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
+  if(empty($age))
+    {
+        echo "Invalid Age.";
+    }
+    else{
+        echo "You are $age years old.";
+    }
 
-
-    if (empty($email)) {
+    if (empty($email)) 
+        {
         echo "invalid email";
     } else {
         echo "Your email is {$email}";
