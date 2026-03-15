@@ -34,7 +34,7 @@ if (isset($_POST["login"])) {
         $_SESSION["password"] = $_POST["password"];
         header("Location:home.php");
     } else {
-        echo "Missing username of password.";
+        echo "Missing username/password.";
     }
 }
 ?>
